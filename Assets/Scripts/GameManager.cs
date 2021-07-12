@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour
 
                 gameState = GameState.game;
             }
+            if (gamepad.bButton.isPressed)
+            {
+                Application.Quit();
+            }
     }
 }
 
