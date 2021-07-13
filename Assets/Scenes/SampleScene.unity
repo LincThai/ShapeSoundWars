@@ -1507,6 +1507,7 @@ MonoBehaviour:
   - {fileID: 1883087043}
   - {fileID: 1466971334}
   - {fileID: 476271238}
+  - {fileID: 1175618334}
   enemySpawnerInactiveTimers:
   - 2
   - 2
