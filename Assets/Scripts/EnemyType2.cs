@@ -26,7 +26,7 @@ public class EnemyType2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         timePassed = lagTime;
-        audioSource = GetComponent<audioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()

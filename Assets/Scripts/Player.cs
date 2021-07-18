@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
 
     private Vector3 playerStartLocation;
 
-    private AudioSource audioMove;
-    private AudioSource audioDeath;
+    public AudioSource audioMove;
+    public AudioSource audioDeath;
 
 
     void Start()
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
                 movementVector.Normalize();
 
             playerController.Move(movementVector * Time.deltaTime * moveSpeed);
+            audioMove.Play();
 
             //------------------------------------------------------------------------------ rotation
 
@@ -81,6 +82,7 @@ public class Player : MonoBehaviour
     public void Kill()
     {
         GameObject temp = Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject;
+        audioDeath.Play();
         Destroy(temp, deathParticlesKillTime);
         gameManager.gameState = GameState.dead;
         isDead = true;
