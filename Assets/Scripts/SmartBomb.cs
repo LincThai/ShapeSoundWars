@@ -5,10 +5,12 @@ using UnityEngine;
 public class SmartBomb : MonoBehaviour
 {
     private GameManager gameManager;
+    private AudioSource audioSource;
 
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,6 +34,7 @@ public class SmartBomb : MonoBehaviour
             }
 
             Destroy(gameObject);
+            audioSource.Play();
         }
     }
 }

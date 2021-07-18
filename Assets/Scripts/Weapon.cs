@@ -17,12 +17,14 @@ public class Weapon : MonoBehaviour
 
     private GameManager gameManager;
 
+    private AudioSource audioSource;
 
     private void Start()
     {
         canShoot = true;
         timePassed = 0.0f;
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class Weapon : MonoBehaviour
         if (!transform.root.GetComponent<Player>().isDead)
         {
             Instantiate(projectileObject, transform.position, transform.rotation);
+            audioSource.Play();
         }
     }
 

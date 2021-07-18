@@ -14,10 +14,13 @@ public class EnemyType1 : MonoBehaviour
 
     public int pointValue;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,6 +52,7 @@ public class EnemyType1 : MonoBehaviour
             gameManager.score += pointValue;
         GameObject temp = Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject;
         Destroy(temp, deathParticlesKillTime);
+        audioSource.Play();
         Destroy(gameObject);
     }
 

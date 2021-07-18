@@ -19,11 +19,14 @@ public class EnemyType2 : MonoBehaviour
 
     public int pointValue;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         timePassed = lagTime;
+        audioSource = GetComponent<audioSource>();
     }
 
     void Update()
@@ -66,6 +69,7 @@ public class EnemyType2 : MonoBehaviour
             gameManager.score += pointValue;
         GameObject temp = Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject;
         Destroy(temp, deathParticlesKillTime);
+        audioSource.Play();
         Destroy(gameObject);
     }
 

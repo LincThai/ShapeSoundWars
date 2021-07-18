@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
 
     private Vector3 playerStartLocation;
 
+    private AudioSource audioMove;
+    private AudioSource audioDeath;
+
 
     void Start()
     {
