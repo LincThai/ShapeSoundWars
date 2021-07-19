@@ -61,7 +61,11 @@ public class Player : MonoBehaviour
                 movementVector.Normalize();
 
             playerController.Move(movementVector * Time.deltaTime * moveSpeed);
+            
+            if (movementVector.magnitude > stopValue)
+            {
             audioMove.Play();
+            }
 
             //------------------------------------------------------------------------------ rotation
 
