@@ -1,5 +1,0 @@
-Enemy Behaviours
-
-Type 1 - random diraction, reflect off walls
-
-Type 2 - seek player
