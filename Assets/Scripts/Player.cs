@@ -30,7 +30,8 @@ public class Player : MonoBehaviour
 
     public AudioSource audioMove;
     public AudioSource audioDeath;
-
+    private float timePassed;
+    public float delayTime = 10;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
         playerController = gameObject.GetComponent<CharacterController>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         playerStartLocation = transform.position;
+        timePassed = 10;
     }
 
     void Update()
@@ -64,7 +66,12 @@ public class Player : MonoBehaviour
             
             if (movementVector.magnitude > stopValue)
             {
-            audioMove.Play();
+                timePassed += Time.deltaTime;
+                if (timePassed >= delayTime)
+                {
+                    audioMove.Play();
+                    timePassed = 0;
+                }
             }
 
             //------------------------------------------------------------------------------ rotation

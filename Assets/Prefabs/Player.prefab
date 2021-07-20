@@ -60,6 +60,7 @@ MonoBehaviour:
   spawnProximity: 3
   audioMove: {fileID: 2357045559002830937}
   audioDeath: {fileID: 2392961308310098065}
+  delayTime: 2
 --- !u!54 &-951612718005298919
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - EnemyManager
+  - AudioA
   layers:
   - Default
   - TransparentFX

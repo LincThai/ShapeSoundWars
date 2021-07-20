@@ -51,6 +51,7 @@ MonoBehaviour:
   deathParticlesKillTime: 0.5
   wallcollisionRange: 1
   pointValue: 1
+  audioObjectName: Enemy Audio 2
 --- !u!135 &7832349858630295070
 SphereCollider:
   m_ObjectHideFlags: 0

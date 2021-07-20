@@ -10,7 +10,7 @@ public class SmartBomb : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.FindGameObjectWithTag("AudioA").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -23,6 +23,7 @@ public class SmartBomb : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            audioSource.Play();
             GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
             for (int i = 0; i < allEnemies.Length; i++)
@@ -34,7 +35,6 @@ public class SmartBomb : MonoBehaviour
             }
 
             Destroy(gameObject);
-            audioSource.Play();
         }
     }
 }

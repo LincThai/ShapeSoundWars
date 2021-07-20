@@ -26,7 +26,7 @@ public class EnemyType2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         timePassed = lagTime;
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GameObject.Find("Enemy Audio 3").GetComponent<AudioSource>();
     }
 
     void Update()
@@ -68,8 +68,8 @@ public class EnemyType2 : MonoBehaviour
         if (giveScore)
             gameManager.score += pointValue;
         GameObject temp = Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject;
-        Destroy(temp, deathParticlesKillTime);
         audioSource.Play();
+        Destroy(temp, deathParticlesKillTime);
         Destroy(gameObject);
     }
 
