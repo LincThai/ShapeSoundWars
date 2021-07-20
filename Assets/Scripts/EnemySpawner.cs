@@ -13,12 +13,15 @@ public class EnemySpawner : MonoBehaviour
 
     private GameManager gameManager; //--//--//-//-/-/-/-/-/-/-/
 
+    private AudioSource audioSource;
+
 
     void Start()
     {
         canSpawn = true;
         spawnBounds = GetComponent<BoxCollider>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>(); //--//--//-//-/-/-/-/-/-/-/
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -51,5 +54,6 @@ public class EnemySpawner : MonoBehaviour
         spawnRot = Quaternion.Euler(0f, rotationAngle, 0f);
 
         Instantiate(enemyToSpawn, spawnPos, spawnRot);
+        audioSource.Play();
     }
 }
