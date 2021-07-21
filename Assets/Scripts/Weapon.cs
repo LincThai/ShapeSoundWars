@@ -12,12 +12,18 @@ public class Weapon : MonoBehaviour
     private float timePassed;
     private bool canShoot;
 
-    private Gamepad gamepad = Gamepad.current;
+    //private Gamepad gamepad = Gamepad.current;
+    private Gamepad gamepad;
     public float shootThreshold;
 
     private GameManager gameManager;
 
     private AudioSource audioSource;
+
+    void Awake()
+    {
+        gamepad = InputSystem.GetDevice<Gamepad>();
+    }
 
     private void Start()
     {

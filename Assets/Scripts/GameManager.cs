@@ -12,7 +12,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> disableOnGameStart;
     public List<GameObject> enableOnDeath;
 
-    private Gamepad gamepad = Gamepad.current;
+    //private Gamepad gamepad = Gamepad.current;
+    private Gamepad gamepad;
     private GameObject player;
     private GameObject enemyManager;
 
@@ -21,6 +22,10 @@ public class GameManager : MonoBehaviour
 
     private AudioSource audioSource;
 
+    void Awake()
+    {
+        gamepad = InputSystem.GetDevice<Gamepad>();
+    }
 
     void Start()
     {

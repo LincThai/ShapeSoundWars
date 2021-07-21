@@ -17,7 +17,8 @@ public class Player : MonoBehaviour
     private Vector3 movementVector = new Vector3();
     private Vector3 directionVector = new Vector3();
 
-    private Gamepad gamepad = Gamepad.current;
+    //private Gamepad gamepad = Gamepad.current;
+    private Gamepad gamepad;
     public float stopValue;
 
     private GameManager gameManager;
@@ -32,6 +33,11 @@ public class Player : MonoBehaviour
     public AudioSource audioDeath;
     private float timePassed;
     public float delayTime = 10;
+
+    void Awake()
+    {
+        gamepad = InputSystem.GetDevice<Gamepad>();
+    }
 
     void Start()
     {
